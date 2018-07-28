@@ -29,7 +29,7 @@ class FaraPayamakServiceProvider extends ServiceProvider
 	public function boot()
 	{
 		// Config file path.
-		$dist = __DIR__.'/.../.../config/payamak.php';
+		$dist = __DIR__.'/../../config/payamak.php';
 		// If we're installing in to a Lumen project, config_path
 		// won't exist so we can't auto-publish the config
 		if (function_exists('config_path')) {

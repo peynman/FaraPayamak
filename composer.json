@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "FaraPayamak\\Providers\\PackageServiceProvider"
+                "FaraPayamak\\Providers\\FaraPayamakServiceProvider"
             ],
             "aliases": {
             },
