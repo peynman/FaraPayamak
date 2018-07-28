@@ -1,6 +1,6 @@
 <?php
 
-namespace NamespaceHolder\Tests;
+namespace FaraPayamak\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 

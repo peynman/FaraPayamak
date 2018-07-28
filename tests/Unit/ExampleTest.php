@@ -1,8 +1,8 @@
 <?php
 
-namespace NamespaceHolder\Tests\Unit;
+namespace FaraPayamak\Tests\Unit;
 
-use NamespaceHolder\Tests\TestCase;
+use FaraPayamak\Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
