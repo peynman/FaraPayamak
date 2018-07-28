@@ -1,10 +1,10 @@
 {
-    "name": "jeffochoa/laravel-package-boilerplate",
-    "description": "A simple boilerplate to create new laravel packages.",
+    "name": "peynman/FaraPayamak",
+    "description": "FaraPayamak sms service provider for laravel.",
     "type": "library",
-    "version": "1.0.0-dev",
+    "version": "1.1-dev",
     "require": {
-        "laravel/framework": "5.5.*"
+        "laravel/framework": "5.*"
     },
     "require-dev": {
         "vlucas/phpdotenv": "^2.4",
@@ -13,23 +13,27 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Jefferson Ochoa (Jeff)"
+            "name": "Peyman Abdi"
         }
     ],
     "autoload": {
         "psr-4": {
-            "NamespaceHolder\\": "src/"
+            "FaraPayamak\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "NamespaceHolder\\Tests\\": "tests/"
+            "FaraPayamak\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "NamespaceHolder\\Providers\\PackageServiceProvider"
+                "FaraPayamak\\Providers\\PackageServiceProvider"
+            ],
+            "aliases": {
+            },
+            "dont-discover": [
             ]
         }
     }
