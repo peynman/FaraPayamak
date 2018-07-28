@@ -1,5 +1,7 @@
 <?php
 
+namespace FaraPayamak;
+
 use FaraPayamak\Facade\Payamak;
 use Illuminate\Notifications\Notification;
 
