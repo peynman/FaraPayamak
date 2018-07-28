@@ -24,8 +24,24 @@ class Client {
 		$this->client = new SoapClient($url);
 	}
 
+	/**
+	 * @param Message $message
+	 *
+	 * @return mixed
+	 * @throws \Exception
+	 */
 	public function SendMessage(Message $message) {
-		
+		if (!is_null($message->username) && !is_null($message->password)) {
+			return $this->SendTextWithCredentials(
+				$message->username,
+				$message->password,
+				$message->from,
+				$message->to,
+				$message->text,
+				$this->isFlash
+			);
+		}
+		return $this->SendText($message->to, $message->text);
 	}
 
 	/**

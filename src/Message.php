@@ -17,8 +17,8 @@ class Message
 	public $username = null;
 	public $password = null;
 
-	public function __construct($text, $number)
+	public function __construct($text)
 	{
-
+		$this->text = $text;
 	}
 }
