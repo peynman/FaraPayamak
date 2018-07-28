@@ -30,9 +30,9 @@ class Client {
 	 * @return mixed
 	 * @throws \Exception
 	 */
-	public function SendMessage(Message $message) {
+	public function sendMessage(Message $message) {
 		if (!is_null($message->username) && !is_null($message->password)) {
-			return $this->SendTextWithCredentials(
+			return $this->sendTextWithCredentials(
 				$message->username,
 				$message->password,
 				$message->from,
@@ -41,7 +41,7 @@ class Client {
 				$this->isFlash
 			);
 		}
-		return $this->SendText($message->to, $message->text);
+		return $this->sendText($message->to, $message->text);
 	}
 
 	/**
@@ -55,7 +55,7 @@ class Client {
 	 * @throws \Exception
 	 * @return mixed
 	 */
-	public function SendTextWithCredentials($username, $password, $phone_number, $to, $text, $isflash = false) {
+	public function sendTextWithCredentials($username, $password, $phone_number, $to, $text, $isflash = false) {
 		return $this->client->SendSimpleSMS([
 			'username' => $username,
 			'password' => $password,
@@ -73,8 +73,8 @@ class Client {
 	 * @throws \Exception
 	 * @return mixed
 	 */
-	public function SendText($number, $text) {
-		return $this->SendMessageWithCredentials($this->username, $this->password, $this->from, $number, $text, $this->isFlash);
+	public function sendText($number, $text) {
+		return $this->sendTextWithCredentials($this->username, $this->password, $this->from, $number, $text, $this->isFlash);
 	}
 
 	/**
@@ -84,7 +84,7 @@ class Client {
 	 * @throws \Exception
 	 * @return mixed
 	 */
-	public function SendTextBatch($numbers, $text) {
+	public function sendTextBatch($numbers, $text) {
 		return $this->client->SendSimpleSMS([
 			'username' => $this->username,
 			'password' => $this->password,

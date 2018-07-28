@@ -48,9 +48,9 @@ class FaraPayamakServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		// Bind Nexmo Client in Service Container.
+		// Bind Client in Service Container.
 		$this->app->singleton(Client::class, function ($app) {
-			return $this->createPayamakClient($app['config']);
+			return $this->createPayamakClient($app['config']['payamak']);
 		});
 	}
 	/**
