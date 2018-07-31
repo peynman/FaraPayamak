@@ -56,7 +56,7 @@ class Client {
 	 * @return mixed
 	 */
 	public function sendTextWithCredentials($username, $password, $phone_number, $to, $text, $isflash = false) {
-		return $this->client->SendSimpleSMS([
+		return $this->client->SendSimpleSMS2([
 			'username' => $username,
 			'password' => $password,
 			'from' => $phone_number,

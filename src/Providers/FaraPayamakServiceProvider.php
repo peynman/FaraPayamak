@@ -64,13 +64,13 @@ class FaraPayamakServiceProvider extends ServiceProvider
 	}
 
 
-	private function createPayamakClient(Config $config) {
+	private function createPayamakClient($config) {
 		return new Client(
-			$config->get('soap'),
-			$config->get('username'),
-			$config->get('password'),
-			$config->get('phone_number'),
-			$config->get('isFlash')
+			$config['soap'],
+			$config['username'],
+			$config['password'],
+			$config['phone_number'],
+			isset($config['isFlash']) ? $config['isFlash']: false
 		);
 	}
 }

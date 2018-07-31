@@ -4,6 +4,7 @@ namespace FaraPayamak;
 
 use FaraPayamak\Facade\Payamak;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Queue;
 
 /**
  * Created by PhpStorm.
@@ -20,6 +21,10 @@ class PayamakChannel
 		if (isset($notifiable->meta->phone)) {
 			$msg->to = $notifiable->meta->phone;
 		}
-		Payamak::sendMessage($msg);
+		if (is_null(config('payamak.queue'))) {
+			Payamak::sendMessage($msg);
+		} else {
+			Queue::push(new Jobs\SendSMS($msg), [], config('payamak.queue'));
+		}
 	}
 }
