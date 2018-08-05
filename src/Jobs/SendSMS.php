@@ -41,6 +41,13 @@ class SendSMS implements ShouldQueue
 	 */
 	public function handle()
 	{
-		Payamak::sendMessage($this->message);
+		try {
+			$res = Payamak::sendMessage( $this->message );
+			if (is_soap_fault($res)) {
+				$this->fail($res);
+			}
+		} catch (\Exception $ex) {
+			$this->fail($ex);
+		}
 	}
 }

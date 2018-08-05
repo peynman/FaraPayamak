@@ -2,7 +2,7 @@
     "name": "peynman/FaraPayamak",
     "description": "FaraPayamak sms service provider for laravel.",
     "type": "library",
-    "version": "0.9",
+    "version": "0.10",
     "require": {
     },
     "require-dev": {
@@ -35,6 +35,7 @@
                 "Payamak": "FaraPayamak\\Payamak"
             },
             "dont-discover": [
+                "laravel/framework"
             ]
         }
     }

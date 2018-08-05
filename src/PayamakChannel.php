@@ -4,6 +4,7 @@ namespace FaraPayamak;
 
 use FaraPayamak\Facade\Payamak;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Queue;
 
 /**
@@ -22,7 +23,11 @@ class PayamakChannel
 			$msg->to = $notifiable->meta->phone;
 		}
 		if (is_null(config('payamak.queue'))) {
-			Payamak::sendMessage($msg);
+			try {
+				Payamak::sendMessage($msg);
+			} catch (\Exception $e) {
+				Log::error($e);
+			}
 		} else {
 			Queue::push(new Jobs\SendSMS($msg), [], config('payamak.queue'));
 		}
