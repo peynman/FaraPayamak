@@ -16,6 +16,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Support\Facades\Log;
 
 class SendSMS implements ShouldQueue
 {
@@ -44,9 +45,11 @@ class SendSMS implements ShouldQueue
 		try {
 			$res = Payamak::sendMessage( $this->message );
 			if (is_soap_fault($res)) {
+				Log::error($res);
 				$this->fail($res);
 			}
 		} catch (\Exception $ex) {
+			Log::error($ex);
 			$this->fail($ex);
 		}
 	}
