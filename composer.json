@@ -1,11 +1,12 @@
 {
-    "name": "peynman/FaraPayamak",
+    "name": "peynman/fara-payamak",
     "description": "FaraPayamak sms service provider for laravel.",
     "type": "library",
     "version": "0.11",
     "require": {
     },
     "require-dev": {
+        "php"
         "laravel/framework": "5.*",
         "vlucas/phpdotenv": "^2.4",
         "orchestra/testbench": "^3.4"
@@ -13,7 +14,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Peyman Abdi"
+            "name": "Peyman Abdi",
+            "email": "peyman.abdi.work@gmail.com"
         }
     ],
     "autoload": {

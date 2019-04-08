@@ -3,7 +3,7 @@ A Facade and ServiceProvider for FaraPayamak soap api endpoints
 
 ## Installation
 ```bash
-$ composer require peynman/FaraPayamak
+$ composer require peynman/fara-payamak
 ```
 
 This will install all the dependencies
