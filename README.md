@@ -33,5 +33,5 @@ SOFTWARE.
 
 ## Credits
 
-Peyman Abdi.
-instagram: @peyman.game
+Peyman Abdi
+me@peynman.ir
