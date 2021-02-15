@@ -6,7 +6,7 @@
     "require": {
     },
     "require-dev": {
-        "laravel/framework": "5.*",
+        "laravel/framework": "8.*",
         "vlucas/phpdotenv": "^2.4",
         "orchestra/testbench": "^3.4"
     },
